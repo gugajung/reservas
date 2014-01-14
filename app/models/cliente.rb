@@ -2,7 +2,14 @@ class Cliente < ActiveRecord::Base
 	attr_accessible :nome, :cpf, :nascimento, :sexo
 	has_many :reservas, dependent: :destroy
 	validates :nome, :cpf, presence: true
-	validate :cpf_valido
+	validate :cpf_valido, :cpf_unico
+
+	def cpf_unico
+		cpfs = Cliente.where("id != #{self.id}").pluck :cpf
+		if cpfs.include? cpf
+			errors.add :cpf, "o CPF ja existe no banco"
+		end
+	end
 
 	def cpf_valido
 		  winvalidos = %w{12345678909 11111111111 22222222222 33333333333 44444444444 55555555555 66666666666 77777777777 88888888888 99999999999 00000000000}

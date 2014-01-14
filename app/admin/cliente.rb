@@ -1,7 +1,8 @@
 ActiveAdmin.register Cliente do
 
+  sexos = %w(masculino feminino)
   filter :nome
-  filter :sexo, as: :select, collection: %w(masculino feminino)
+  filter :sexo, as: :select, collection: sexos
 
   index download_links: false do
     column :nome
@@ -12,9 +13,10 @@ ActiveAdmin.register Cliente do
 
   form do |f|
     f.inputs do
-      f.input :nome
-      f.input :sexo, as: :radio, collection: %w(masculino feminino)
-      f.input :data_nascimento , as: :datepicker
+      f.input :nome, input_html: { size: 20, placeholder: "Nome completo" }
+      f.input :cpf, input_html: { size: 20, placeholder: "000.000.000-00" }
+      f.input :sexo, as: :radio, collection: sexos
+      f.input :data_nascimento , as: :datepicker, input_html: { size: 20, placeholder: "Selecione a data" }
     end
     f.actions
   end

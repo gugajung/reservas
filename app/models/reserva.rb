@@ -6,7 +6,7 @@ class Reserva < ActiveRecord::Base
 
 	def data_final_maior
 		if fim < inicio
-			errors.add :fim, "não pode ser menor que a data de inicio"
+			errors.add :fim, "Data final não pode ser menor que a inicial"
 		end
 	end
 end
