@@ -1,4 +1,16 @@
 ActiveAdmin.register Quarto do
+  filter :numero
+  filter :pessoas
+  filter :tem_tv
+  filter :tem_ar
+
+  index :download_links => false do
+    column :numero
+    column "capacidade", :pessoas
+    column "com tv", :tem_tv
+    column "com ar condicionado", :tem_ar
+    default_actions
+  end
 
   
   # See permitted parameters documentation:

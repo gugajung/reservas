@@ -1,5 +1,15 @@
 ActiveAdmin.register Cliente do
 
+  filter :nome
+  filter :sexo, :as => :select, :collection => proc { %w(masculino feminino) }
+
+  index :download_links => false do
+    column :nome
+    column "Data de nascimento",:data_nascimento
+    column :sexo
+    default_actions
+  end
+
   
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
