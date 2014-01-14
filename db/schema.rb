@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140113135010) do
+ActiveRecord::Schema.define(version: 20140114122323) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -72,11 +72,11 @@ ActiveRecord::Schema.define(version: 20140113135010) do
     t.integer  "quarto"
     t.date     "inicio"
     t.date     "fim"
-    t.integer  "Cliente_id"
+    t.integer  "cliente_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "reservas", ["Cliente_id"], name: "index_reservas_on_Cliente_id"
+  add_index "reservas", ["cliente_id"], name: "index_reservas_on_cliente_id"
 
 end

@@ -11,6 +11,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'protected_attributes'
+gem 'formtastic'
 
 group :doc do
   gem 'sdoc', require: false

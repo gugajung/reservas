@@ -232,6 +232,7 @@ DEPENDENCIES
   activeadmin!
   capybara
   coffee-rails (~> 4.0.0)
+  formtastic
   guard-rspec
   jbuilder (~> 1.2)
   jquery-rails
